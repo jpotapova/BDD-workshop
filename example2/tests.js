@@ -13,3 +13,24 @@ describe("Required field", function(){
   });
 
 });
+
+
+describe("Field of minimum length", function(){
+
+  it("4 is invalid when it contains only 3 characters", function(){
+    expect(validateMinLength("aaa", 4)).toBe(false);
+  });
+
+  it("10 is invalid when it contains only 4 characters", function(){
+    expect(validateMinLength("aaaa", 10)).toBe(false);
+  });
+
+  it("10 is valid when it contains 10 characters", function(){
+    expect(validateMinLength("aaaaaaaaaa", 10)).toBe(true);
+  });
+
+  it("10 is valid when it contains 11 characters", function(){
+    expect(validateMinLength("aaaaaaaaaaa", 10)).toBe(true);
+  });
+
+});
