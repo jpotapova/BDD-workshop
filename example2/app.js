@@ -18,3 +18,17 @@ function validateNumeric(valueToValidate) {
   var isValid = !isNaN(valueToValidate);
   return isValid;
 }
+
+function validateSpecial(valueToValidate) {
+  var isValid = false;
+  if (valueToValidate.indexOf("#") > -1 ) {
+    isValid = true;
+  }
+  if (valueToValidate.indexOf("$") > -1 ) {
+    isValid = true;
+  }
+  if (valueToValidate.indexOf("!") > -1 ) {
+    isValid = true;
+  }
+  return isValid;
+}
