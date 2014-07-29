@@ -3,6 +3,8 @@
 <head>
   <title>BDD workshop</title>
 
+  <link rel="stylesheet" type="text/css" href="app.css">
+
   <!-- JASMINE BEGIN -->
   <link rel="stylesheet" type="text/css" href="jasmine-2.0.1/jasmine.css">
   <script type="text/javascript" src="jasmine-2.0.1/jasmine.js"></script>
@@ -11,6 +13,7 @@
   <!-- JASMINE END -->
 
   <!-- APPLICATION SCRIPTS -->
+  <script type="text/javascript" src="jquery-2.1.1.min.js"></script>
   <script type="text/javascript" src="app.js"></script>
 
   <!-- TESTS -->
@@ -19,6 +22,31 @@
 </head>
 
 <body>
+
+    <h1>Form validation - example 2</h1>
+
+    <form>
+
+      <div class="rule-numeric">
+        <label>This is a numeric field</label>
+        <input type="text" />
+      </div>
+
+      <div class="rule-required rule-special">
+        <label>This is a required field with special character</label>
+        <input type="text" />
+      </div>
+
+      <div class="rule-minlength-3">
+        <label>This is a field with min length of 3</label>
+        <input type="text" class=""/>
+      </div>
+
+      <div>
+        <button>Validate</button>
+      </div>
+
+    </form>
 
 </body>
 </html>
