@@ -47,3 +47,24 @@ describe("Numeric field", function(){
   });
 
 });
+
+
+describe("Field that must have a special character ", function(){
+
+  it("is invalid when it does not have any #, $ or !", function(){
+    expect(validateSpecial("asdsdd3546,.*")).toBe(false);
+  });
+
+  it("is valid when it contains at least one #", function(){
+    expect(validateSpecial("asdsdd#")).toBe(true);
+  });
+
+  it("is valid when it contains at least one $", function(){
+    expect(validateSpecial("asd$sdd")).toBe(true);
+  });
+
+  it("is valid when it contains at least one !", function(){
+    expect(validateSpecial("as!dsdd")).toBe(true);
+  });
+
+});
