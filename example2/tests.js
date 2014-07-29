@@ -68,3 +68,15 @@ describe("Field that must have a special character ", function(){
   });
 
 });
+
+
+describe("Validation can check", function(){
+
+  it("a required field", function(){
+    spyOn(window, 'validateRequired');
+    var validationResult = validate("abc", "required");
+    expect(validateRequired).toHaveBeenCalled();
+  });
+
+
+});
