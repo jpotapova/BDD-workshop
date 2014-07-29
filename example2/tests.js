@@ -34,3 +34,16 @@ describe("Field of minimum length", function(){
   });
 
 });
+
+
+describe("Numeric field", function(){
+
+  it("is invalid when it contains at least one letter", function(){
+    expect(validateNumeric("123445d2323")).toBe(false);
+  });
+
+  it("is valid when it does not contain any characters other than numbers", function(){
+    expect(validateNumeric("343434")).toBe(true);
+  });
+
+});
