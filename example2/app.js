@@ -52,3 +52,14 @@ function validate(valueToValidate, rule){
   }
   return isValid;
 }
+
+
+$(document).ready(function(){
+
+  $('button').click(function(e){
+
+    e.preventDefault();
+
+  });
+
+});
