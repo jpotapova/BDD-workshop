@@ -13,3 +13,8 @@ function validateMinLength(valueToValidate, minLengthRequired) {
   }
   return isValid;
 }
+
+function validateNumeric(valueToValidate) {
+  var isValid = !isNaN(valueToValidate);
+  return isValid;
+}
