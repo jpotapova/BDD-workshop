@@ -43,6 +43,8 @@ function validate(valueToValidate, rule){
 
   if (rule === "required") {
     isValid = validateRequired(valueToValidate);
+  } else if (rule === "numeric") {
+    isValid = validateNumeric(valueToValidate);
   } else if (rule === "minlength") {
     isValid = validateMinLength(valueToValidate, parseInt(additional));
   }
