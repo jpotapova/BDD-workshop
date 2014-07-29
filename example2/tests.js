@@ -93,4 +93,11 @@ describe("Validation can check", function(){
     expect(validateNumeric).toHaveBeenCalled();
   });
 
+  it("a special field", function(){
+    spyOn(window, 'validateSpecial').and.callThrough();
+    var validationResult = validate("a$bc", "special");
+    expect(validationResult).toBe(true);
+    expect(validateSpecial).toHaveBeenCalled();
+  });
+
 });
