@@ -32,3 +32,12 @@ function validateSpecial(valueToValidate) {
   }
   return isValid;
 }
+
+function validate(valueToValidate, rule){
+  var isValid = false;
+
+  if (rule === "required") {
+    isValid = validateRequired(valueToValidate);
+  }
+  return isValid;
+}
