@@ -73,7 +73,7 @@ describe("Field that must have a special character ", function(){
 describe("Validation can check", function(){
 
   it("a required field", function(){
-    spyOn(window, 'validateRequired');
+    spyOn(window, 'validateRequired').and.callThrough();
     var validationResult = validate("abc", "required");
     expect(validationResult).toBe(true);
     expect(validateRequired).toHaveBeenCalled();
