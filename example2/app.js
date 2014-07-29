@@ -36,8 +36,15 @@ function validateSpecial(valueToValidate) {
 function validate(valueToValidate, rule){
   var isValid = false;
 
+  var parts = rule.split('-');
+
+  rule = parts[0];
+  var additional = parts[1];
+
   if (rule === "required") {
     isValid = validateRequired(valueToValidate);
+  } else if (rule === "minlength") {
+    isValid = validateMinLength(valueToValidate, parseInt(additional));
   }
   return isValid;
 }
