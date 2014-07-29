@@ -5,3 +5,11 @@ function validateRequired(valueToValidate) {
   }
   return isValid;
 }
+
+function validateMinLength(valueToValidate, minLengthRequired) {
+  var isValid = false;
+  if (valueToValidate.length >= minLengthRequired) {
+    isValid = true;
+  }
+  return isValid;
+}
