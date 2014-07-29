@@ -8,4 +8,8 @@ describe("Sum of", function() {
         expect(sum(14, 6)).toBe(20);
     });
 
+    it("14, 6 and 3 should be 23", function() {
+        expect(sum(14, 6, 3)).toBe(23);
+    });
+
 });
