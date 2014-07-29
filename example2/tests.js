@@ -86,5 +86,11 @@ describe("Validation can check", function(){
     expect(validateMinLength).toHaveBeenCalledWith("a$bc", 5);
   });
 
+  it("a numeric field", function(){
+    spyOn(window, 'validateNumeric').and.callThrough();
+    var validationResult = validate("abc", "numeric");
+    expect(validationResult).toBe(false);
+    expect(validateNumeric).toHaveBeenCalled();
+  });
 
 });
