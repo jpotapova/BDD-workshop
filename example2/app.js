@@ -56,9 +56,28 @@ function validate(valueToValidate, rule){
 
 $(document).ready(function(){
 
+  var allClassnames, field, isValid;
+
   $('button').click(function(e){
 
     e.preventDefault();
+
+    $('form div[class^="rule-"]').each(function(){
+
+      field = $(this);
+      allClassnames = field.get(0).className.split(/\s+/);
+      allClassnames.forEach(function(className){
+        if (className.indexOf("rule-") === 0) {
+          isValid = validate(field.val(), className.replace("rule-", ""));
+          if (isValid === false) {
+            field.closest('div').addClass('error');
+          }
+        }
+      });
+
+
+    });
+
 
   });
 
