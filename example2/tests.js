@@ -79,5 +79,12 @@ describe("Validation can check", function(){
     expect(validateRequired).toHaveBeenCalled();
   });
 
+  it("a min length field", function(){
+    spyOn(window, 'validateMinLength').and.callThrough();
+    var validationResult = validate("a$bc", "minlength-5");
+    expect(validationResult).toBe(false);
+    expect(validateMinLength).toHaveBeenCalledWith("a$bc", 5);
+  });
+
 
 });
